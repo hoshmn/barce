@@ -1,0 +1,180 @@
+html {
+  background-color: black;
+  padding-bottom: 4rem;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#frames {
+  /* margin: auto;
+  max-width: 80vw; */
+  margin-left: 2vw;
+  margin-right: 2vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 2vh;
+  position: relative;
+  animation: myOrbit 12s infinite linear;
+  transition: transform linear 2s;
+}
+
+h1 {
+  color: rgb(41, 145, 205);
+  font-style: italic;
+  text-align: center;
+}
+
+#mask {
+  position: absolute;
+  /* height: 100%; */
+  width: 100%;
+  top: -2vw;
+  bottom: -2vw;
+  /* left: 0; */
+  /* filter: set in index.js; */
+  background: #000000;
+  animation: opacify 4s infinite ease-in-out;
+}
+
+.foto {
+  max-width: min(80vw, 780px);
+  max-height: min(80vw, 780px);
+  width: 100%;
+  height: 100%;
+  /* filter: set in index.js; */
+  /* filter: blur(2vw); */
+}
+
+.foto:not(.active) {
+  display: none;
+}
+
+.text {
+  margin: 1rem;
+  color: rgb(34, 236, 169);
+}
+
+.text.left {
+  color: #fbf1de;
+}
+
+@media screen and (min-width: 640px) {
+
+  .texts {
+    max-width: 780px;
+    display: flex;
+    margin: auto;
+  }
+
+  .text.left {
+    text-align: end;
+  }
+}
+
+.resources h3 {
+  text-align: center;
+  text-decoration: underline;
+  color: rgb(155, 37, 131);
+  font-weight: lighter;
+  /* color: rgb(217, 5, 174); */
+}
+
+.resources {
+  position: fixed;
+  transition: top ease-in .5s;
+  top: calc(100vh - 42px);
+  background: #e7e3dc;
+  bottom: -5rem;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.toggle-tab {
+  position: absolute;
+  left: 24px;
+  top: -20px;
+  fill: rgb(41, 145, 205);
+  stroke: #e7e3dc;
+  stroke-width: 2;
+  transition: transform ease-in .5s;
+}
+
+.resources.active .toggle-tab {
+  transform: rotate(180deg) translateY(-20px);
+}
+
+.resources .text {
+  color: rgb(0, 68, 46);
+}
+
+.resources .text.left {
+  color: #4d0000;
+}
+
+.resources.active {
+  top: 60px;
+  bottom: 0;
+  overflow-y: auto;
+}
+
+.resource {
+  /* margin-left: 3rem; */
+  display: block;
+  text-align: center;
+}
+
+a {
+  color: rgb(32, 91, 125);
+  /* color: rgb(41, 145, 205); */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.resources.active .note {
+  /* display: block; */
+  /* transform: translateY(0); */
+  bottom: 0;
+}
+
+.note {
+  /* display: none; */
+  color: #d58ad5;
+  position: absolute;
+  /* transform: translateY(100vh); */
+  bottom: -100vh;
+  /* bottom: 0; */
+  right: 1rem;
+  /* transition: transform ease-in .5s; */
+  transition: bottom ease-in .5s;
+}
+
+@keyframes myOrbit {
+  from {
+    transform: rotate(0deg) translateX(1vw) rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg) translateX(1vw) rotate(-360deg);
+  }
+}
+
+@keyframes opacify {
+  0% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
