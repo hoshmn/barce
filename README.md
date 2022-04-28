@@ -1,3 +1,3 @@
-# jamila
+# barce
 
-https://hoshmn.github.io/jamila/
+https://hoshmn.github.io/barce/
