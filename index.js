@@ -27,7 +27,7 @@ const initialize = () => {
   const amt = getDiminishingAmt()
 
   const blurAmt = amt * maxBlur
-  const blur = `blur(${blurAmt}vw)`
+  const blur = `blur(min(${blurAmt}vw, ${blurAmt * 10}px)`
   $(".foto").css("filter", blur)
   $("#mask").css("filter", blur)
 
